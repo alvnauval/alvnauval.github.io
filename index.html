@@ -3,31 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya</title>
+    <title>Portofolio Profesional | [Nama Lengkap Anda]</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Mengambil icon sosial media yang elegan -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <h1>Halo, Saya [Nama Kamu] 👋</h1>
-        <p>Junior Web Developer / Designer / Pelajar</p>
+    <!-- NAVIGASI -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Porto<span>folio.</span></a>
+            <ul class="nav-links">
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#keahlian">Keahlian</a></li>
+                <li><a href="#proyek">Proyek</a></li>
+                <li><a href="#kontak" class="btn-primary">Hubungi Saya</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (HALAMAN UTAMA) -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="subtitle">Selamat Datang di Portofolio Saya</span>
+            <h1>Halo, Saya <span class="highlight">[Nama Lengkap Anda]</span></h1>
+            <h2>[Profesi Anda, misal: Full-Stack Web Developer / UI/UX Designer]</h2>
+            <p>Saya adalah seorang profesional yang berdedikasi tinggi dalam menciptakan solusi digital yang inovatif, fungsional, dan berpusat pada pengguna. Berpengalaman dalam membangun produk digital berkualitas tinggi.</p>
+            <div class="hero-buttons">
+                <a href="#proyek" class="btn-primary">Lihat Karya</a>
+                <a href="#kontak" class="btn-secondary">Kontak</a>
+            </div>
+        </div>
     </header>
 
-    <section class="tentang">
-        <h2>Tentang Saya</h2>
-        <p>Selamat datang di portofolio digital saya! Saya tertarik dengan dunia teknologi dan suka membuat hal-hal menarik di internet.</p>
+    <!-- TENTANG SAYA -->
+    <section id="tentang" class="about">
+        <div class="section-title">
+            <h2>Tentang Saya</h2>
+            <div class="line"></div>
+        </div>
+        <div class="about-container">
+            <div class="about-text">
+                <p>Dengan latar belakang di bidang [Sebutkan Jurusan/Latar Belakang Anda], saya memiliki ketertarikan mendalam terhadap perkembangan teknologi modern. Saya selalu berkomitmen untuk terus belajar hal baru dan menghadapi tantangan kompleks.</p>
+                <p>Fokus utama saya adalah menghadirkan kode yang bersih, performa web yang cepat, serta pengalaman pengguna yang luar biasa di setiap proyek yang saya kerjakan.</p>
+            </div>
+        </div>
     </section>
 
-    <section class="proyek">
-        <h2>Proyek Saya</h2>
-        <ul>
-            <li><strong>Proyek 1:</strong> Deskripsi singkat proyek pertamamu di sini.</li>
-            <li><strong>Proyek 2:</strong> Deskripsi singkat proyek keduamu di sini.</li>
-        </ul>
+    <!-- KEAHLIAN / SKILLS -->
+    <section id="keahlian" class="skills">
+        <div class="section-title">
+            <h2>Keahlian Teknis</h2>
+            <div class="line"></div>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fa-brands fa-html5 skill-icon"></i>
+                <h3>Front-End Development</h3>
+                <p>HTML5, CSS3, JavaScript, Bootstrap, TailwindCSS, React</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-code skill-icon"></i>
+                <h3>Back-End Development</h3>
+                <p>Node.js, Express, PHP, MySQL, RESTful API</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-compass-drafting skill-icon"></i>
+                <h3>UI/UX & Tools</h3>
+                <p>Figma, Git, GitHub, VS Code, Webpack</p>
+            </div>
+        </div>
     </section>
 
+    <!-- PROYEK UTAMA -->
+    <section id="proyek" class="projects">
+        <div class="section-title">
+            <h2>Proyek Unggulan</h2>
+            <div class="line"></div>
+        </div>
+        <div class="projects-grid">
+            <!-- Proyek 1 -->
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>E-Commerce Platform</h3>
+                    <p class="project-tech">React &bull; Node.js &bull; MongoDB</p>
+                    <p>Membangun platform toko online lengkap dengan sistem keranjang belanja, integrasi payment gateway, dan dashboard admin yang responsif.</p>
+                </div>
+            </div>
+            <!-- Proyek 2 -->
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Company Profile Website</h3>
+                    <p class="project-tech">HTML &bull; Tailwind CSS &bull; JavaScript</p>
+                    <p>Mengembangkan website profil perusahaan dengan optimasi SEO tingkat tinggi, kecepatan loading di bawah 1 detik, dan desain modern.</p>
+                </div>
+            </div>
+            <!-- Proyek 3 -->
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Task Management App</h3>
+                    <p class="project-tech">Vue.js &bull; Firebase</p>
+                    <p>Aplikasi kolaborasi tim untuk manajemen tugas secara real-time dengan fitur drag-and-drop papan Kanban.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak" class="contact">
+        <div class="contact-container">
+            <h2>Mari Berkolaborasi</h2>
+            <p>Apakah Anda memiliki proyek menarik atau ingin merekrut saya ke dalam tim Anda? Silakan hubungi saya melalui saluran di bawah ini.</p>
+            <div class="social-links">
+                <a href="mailto:emailanda@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/usernameanda" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/usernameanda" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 [Nama Kamu]. Dibuat dengan ❤️ di GitHub Pages.</p>
+        <p>&copy; 2026 [Nama Lengkap Anda]. Seluruh hak cipta dilindungi.</p>
     </footer>
 
 </body>
