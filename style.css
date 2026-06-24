@@ -1,0 +1,60 @@
+/* Pengaturan Dasar */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* Bagian Atas / Header */
+header {
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Pengaturan Konten / Section */
+section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+section h2 {
+    color: #4f46e5;
+    border-bottom: 2px solid #f4f7f6;
+    padding-bottom: 0.5rem;
+}
+
+/* Daftar Proyek */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #f9fafb;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid #06b6d4;
+    border-radius: 4px;
+}
+
+/* Bagian Bawah / Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #777;
+    font-size: 0.9rem;
+}
