@@ -248,9 +248,16 @@ p {
 
 #hero .hero {
   max-width: 1200px;
-  justify-content: flex-start;
+  width: 100%;
   margin: 0 auto;
   padding: 0 50px;
+  
+  /* PERBAIKAN: Memaksa konten rata kiri dan sejajar di tengah secara vertikal */
+  display: flex;
+  justify-content: flex-start !important; 
+  align-items: center !important;
+  text-align: left;
+}
 }
 
 #hero h1 {
