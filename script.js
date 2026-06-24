@@ -7,11 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
   initializePortfolioFilter()
   initializeContactForm()
   initializeSmoothScroll()
+  initializeAccessibility()
 })
 
 // Loading Screen
 function initializeLoading() {
   const loadingScreen = document.getElementById("loading-screen")
+  if (!loadingScreen) return
 
   window.addEventListener("load", () => {
     setTimeout(() => {
@@ -29,15 +31,36 @@ function initializeNavigation() {
   const hamburger = document.getElementById("hamburger")
   const navMenu = document.getElementById("nav-menu")
   const navLinks = document.querySelectorAll(".nav-link")
+  const sections = document.querySelectorAll("section")
 
-  // Navbar scroll effect
-  window.addEventListener("scroll", () => {
+  if (!navbar || !hamburger || !navMenu) return
+
+  // Combined Throttled Scroll Handler for Navbar and Active Links
+  window.addEventListener("scroll", throttle(() => {
+    // 1. Navbar scroll effect
     if (window.scrollY > 50) {
       navbar.classList.add("scrolled")
     } else {
       navbar.classList.remove("scrolled")
     }
-  })
+
+    // 2. Active navigation link highlight
+    let current = ""
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop
+      // Menggunakan window.scrollY secara eksplisit untuk menghindari bug
+      if (window.scrollY >= sectionTop - 200) {
+        current = section.getAttribute("id")
+      }
+    })
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active")
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active")
+      }
+    })
+  }, 30))
 
   // Mobile menu toggle
   hamburger.addEventListener("click", () => {
@@ -53,29 +76,16 @@ function initializeNavigation() {
     })
   })
 
-  // Active navigation link
-  window.addEventListener("scroll", () => {
-    let current = ""
-    const sections = document.querySelectorAll("section")
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop
-      const sectionHeight = section.clientHeight
-      if (scrollY >= sectionTop - 200) {
-        current = section.getAttribute("id")
-      }
-    })
-
-    navLinks.forEach((link) => {
-      link.classList.remove("active")
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active")
-      }
-    })
+  // Keyboard navigation support (Escape to close mobile menu)
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navMenu.classList.contains("active")) {
+      hamburger.classList.remove("active")
+      navMenu.classList.remove("active")
+    }
   })
 }
 
-// Scroll Animations
+// Scroll Animations (Intersection Observer)
 function initializeScrollAnimations() {
   const observerOptions = {
     threshold: 0.1,
@@ -86,15 +96,13 @@ function initializeScrollAnimations() {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible")
+        observer.unobserve(entry.target) // Berhenti mengamati jika sudah terlihat agar performa lebih enteng
       }
     })
   }, observerOptions)
 
-  // Observe all elements with fade-in class
   const fadeElements = document.querySelectorAll(".fade-in")
-  fadeElements.forEach((element) => {
-    observer.observe(element)
-  })
+  fadeElements.forEach((element) => observer.observe(element))
 }
 
 // Portfolio Filter
@@ -132,21 +140,20 @@ function initializePortfolioFilter() {
   })
 }
 
-// Contact Form
+// Contact Form Submission & Validation
 function initializeContactForm() {
   const contactForm = document.getElementById("contact-form")
+  if (!contactForm) return
 
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault()
 
-    // Get form data
     const formData = new FormData(this)
     const name = formData.get("name")
     const email = formData.get("email")
     const subject = formData.get("subject")
     const message = formData.get("message")
 
-    // Basic validation
     if (!name || !email || !subject || !message) {
       showNotification("Please fill in all fields.", "error")
       return
@@ -157,13 +164,13 @@ function initializeContactForm() {
       return
     }
 
-    // Simulate form submission
     const submitButton = this.querySelector(".submit-button")
     const originalText = submitButton.textContent
 
     submitButton.textContent = "Sending..."
     submitButton.disabled = true
 
+    // Simulasi pengiriman data
     setTimeout(() => {
       showNotification("Thank you! Your message has been sent successfully.", "success")
       contactForm.reset()
@@ -185,13 +192,32 @@ function initializeSmoothScroll() {
       const targetSection = document.querySelector(targetId)
 
       if (targetSection) {
-        const offsetTop = targetSection.offsetTop - 70 // Account for fixed navbar
+        const offsetTop = targetSection.offsetTop - 70 // Mengurangi tinggi navbar tetap (fixed)
 
         window.scrollTo({
           top: offsetTop,
           behavior: "smooth",
         })
       }
+    })
+  })
+}
+
+// Focus management for accessibility
+function initializeAccessibility() {
+  const focusableElements = document.querySelectorAll(
+    'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])',
+  )
+
+  focusableElements.forEach((element) => {
+    element.addEventListener("focus", function () {
+      this.style.outline = "2px solid #007BFF"
+      this.style.outlineOffset = "2px"
+    })
+
+    element.addEventListener("blur", function () {
+      this.style.outline = ""
+      this.style.outlineOffset = ""
     })
   })
 }
@@ -203,12 +229,13 @@ function isValidEmail(email) {
 }
 
 function showNotification(message, type) {
-  // Create notification element
+  const oldNotification = document.querySelector(".notification")
+  if (oldNotification) oldNotification.remove() // Hapus notifikasi lama jika user klik berulang kali
+
   const notification = document.createElement("div")
   notification.className = `notification ${type}`
   notification.textContent = message
 
-  // Style the notification
   notification.style.cssText = `
         position: fixed;
         top: 20px;
@@ -225,80 +252,27 @@ function showNotification(message, type) {
 
   document.body.appendChild(notification)
 
-  // Animate in
   setTimeout(() => {
     notification.style.transform = "translateX(0)"
   }, 100)
 
-  // Remove after 5 seconds
   setTimeout(() => {
     notification.style.transform = "translateX(100%)"
     setTimeout(() => {
-      document.body.removeChild(notification)
+      if (notification.parentNode) {
+        document.body.removeChild(notification)
+      }
     }, 300)
   }, 5000)
 }
 
-// Parallax Effect for Hero Section (Optional)
-window.addEventListener("scroll", () => {
-  const scrolled = window.pageYOffset
-  const hero = document.querySelector(".hero")
-  const rate = scrolled * -0.5
-
-  if (hero) {
-    hero.style.transform = `translateY(${rate}px)`
-  }
-})
-
-// Performance optimization: Throttle scroll events
+// Performance Optimization: Throttle Function
 function throttle(func, wait) {
-  let timeout
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout)
-      func(...args)
+  let time = Date.now()
+  return function() {
+    if ((time + wait - Date.now()) < 0) {
+      func()
+      time = Date.now()
     }
-    clearTimeout(timeout)
-    timeout = setTimeout(later, wait)
   }
 }
-
-// Apply throttling to scroll events
-const throttledScrollHandler = throttle(() => {
-  // Scroll-dependent functions can be called here
-}, 16) // ~60fps
-
-window.addEventListener("scroll", throttledScrollHandler)
-
-// Keyboard navigation support
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    // Close mobile menu if open
-    const hamburger = document.getElementById("hamburger")
-    const navMenu = document.getElementById("nav-menu")
-
-    if (navMenu.classList.contains("active")) {
-      hamburger.classList.remove("active")
-      navMenu.classList.remove("active")
-    }
-  }
-})
-
-// Focus management for accessibility
-document.addEventListener("DOMContentLoaded", () => {
-  const focusableElements = document.querySelectorAll(
-    'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])',
-  )
-
-  focusableElements.forEach((element) => {
-    element.addEventListener("focus", function () {
-      this.style.outline = "2px solid #007BFF"
-      this.style.outlineOffset = "2px"
-    })
-
-    element.addEventListener("blur", function () {
-      this.style.outline = ""
-      this.style.outlineOffset = ""
-    })
-  })
-})
