@@ -301,61 +301,118 @@ p {
   #hero h1 { font-size: 7rem; }
 }
 
-/* Services Section */
-#services .services {
-  flex-direction: column;
-  text-align: center;
-  max-width: 1500px;
-  margin: 0 auto;
+/* ==========================================
+   PERBAIKAN TOTAL UNTUK SKILLS SECTION 
+   ========================================== */
+
+/* 1. Berikan background gelap agar teks putih kontras & terbaca jelas */
+#services {
+  background-image: linear-gradient(60deg, #1f252d 0%, #29323c 100%);
+  width: 100%;
+  min-height: 100vh;
   padding: 100px 0;
 }
 
-#services .service-top { max-width: 600px; margin: 0 auto; padding: 0 20px; }
-  #services .service-bottom .service-item { 
-    flex-basis: 30%; 
-  } 
-}
+#services .services {
+  flex-direction: column;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* 2. Judul Utama "MY SKILLS" */
+#services .section-title {
+  color: white !important;
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+/* Sub-deskripsi di bawah judul utama */
+#services .service-top p {
+  color: #ccd6f6 !important;
+  font-size: 1.6rem;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+}
+
+/* 3. Container untuk bungkus 6 kotak skill */
+#services .service-bottom {
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 25px !important;
+  width: 100%;
+}
+
+/* 4. Pengaturan Setiap Kotak Skill (Card) */
 #services .service-item {
-  flex-basis: 80%;
-  display: flex;
+  flex-basis: 100%; /* Default untuk HP/Mobile */
+  display: flex !important;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: transform;
   flex-direction: column;
   padding: 30px;
-  border-radius: 10px;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05); /* Efek transparan modern */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px -15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  text-align: left;
 }
 
 #services .service-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: crimson;
+  box-shadow: 0 20px 30px -15px rgba(220, 20, 60, 0.2);
 }
 
-#services .service-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
+/* Icon di dalam kotak */
+#services .service-item .icon {
+  height: 70px;
+  width: 70px;
+  margin-bottom: 20px;
+}
+
+#services .service-item .icon img {
   width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, crimson, #ff7b93);
-  transition: left 0.3s ease;
+  height: 100%;
+  object-fit: contain;
 }
 
-#services .service-item:hover::before { left: 0; }
-#services .service-item .icon { height: 80px; width: 80px; margin-bottom: 20px; }
-#services .service-item h2 { font-size: 2rem; color: white; margin-bottom: 10px; text-transform: uppercase; }
-#services .service-item p { color: #e5e5e5; text-align: left; }
+/* Judul Skill (misal: PLC Programming) */
+#services .service-item h2 {
+  font-size: 2rem;
+  color: white !important;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
 
-@media only screen and (min-width: 768px) { #services .service-bottom .service-item { flex-basis: 45%; } }
-@media only screen and (min-width: 1200px) { #services .service-bottom .service-item { flex-basis: 22%; } }
+/* Deskripsi isi skill di dalam kotak */
+#services .service-item p {
+  color: #a8b2d1 !important; /* Warna abu-abu terang agar nyaman dibaca */
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  margin: 0;
+}
+
+/* 5. Pengaturan Grid Responsif (Tablet & Laptop) */
+@media only screen and (min-width: 768px) {
+  #services .service-bottom .service-item {
+    flex-basis: calc(50% - 25px); /* 2 Kolom untuk Tablet */
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #services .service-bottom .service-item {
+    flex-basis: calc(33.33% - 25px); /* 3 Kolom Rapi untuk Laptop/PC */
+  }
+}
 
 /* Projects Section */
 #projects .projects { flex-direction: column; max-width: 1200px; margin: 0 auto; padding: 100px 0; }
