@@ -311,13 +311,8 @@ p {
 }
 
 #services .service-top { max-width: 600px; margin: 0 auto; padding: 0 20px; }
-#services .service-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 50px;
-  gap: 20px;
+#services .service-bottom .service-item { 
+    flex-basis: 30%;
 }
 
 #services .service-item {
