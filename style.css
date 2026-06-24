@@ -311,8 +311,10 @@ p {
 }
 
 #services .service-top { max-width: 600px; margin: 0 auto; padding: 0 20px; }
-#services .service-bottom .service-item { 
-    flex-basis: 30%;
+  #services .service-bottom .service-item { 
+    flex-basis: 30%; 
+  } 
+}
 }
 
 #services .service-item {
