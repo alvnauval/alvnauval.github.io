@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional portfolio website - Modern minimalist design">
-    <meta name="keywords" content="portfolio, professional, designer, developer, minimalist">
+    <meta name="keywords" content="portfolio, professional, electrical engineering, automation, embedded systems, IoT">
     <meta name="author" content="Alvin Nauval Aulia">
     <title>Alvin Nauval Aulia - Professional Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="alvinganteng.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,28 +18,16 @@
         <div class="loading-spinner"></div>
     </div>
 
+    <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-logo">Alvin Nauval Aulia</a>
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link active">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#portfolio" class="nav-link">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#testimonials" class="nav-link">Testimonials</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
@@ -48,14 +37,13 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content fade-in">
                 <h1 class="hero-title">Alvin Nauval Aulia</h1>
-                <p class="hero-subtitle">Electrical Engineering Student Automation • Embedded System • IoT • Renewable Energy</p>
-                <p class="hero-description">Developing smart solutions in industrial automation, 
-                    embedded systems, pneumatic control, and renewable energy 
-                    technologies using PLC, sensors, and microcontrollers..</p>
+                <p class="hero-subtitle">Electrical Engineering Student • Automation • Embedded System • IoT • Renewable Energy</p>
+                <p class="hero-description">Developing smart solutions in industrial automation, embedded systems, pneumatic control, and renewable energy technologies using PLC, sensors, and microcontrollers.</p>
                 <a href="#portfolio" class="cta-button">View Projects</a>
             </div>
         </div>
@@ -74,7 +62,7 @@
                         Electrical Engineering student specializing in industrial automation, embedded systems, Internet of Things (IoT), and renewable energy technologies. Experienced in control system design, PLC and HMI programming, sensor–actuator integration, pneumatic control systems, and microcontroller-based projects for industrial applications.
                     </p>
                     <p class="about-description">
-                        Skilled in designing, simulating, and implementing intelligent systems using platforms such as Arduino and ESP-based devices, with knowledge of control systems, monitoring, data acquisition, and automation technologies. Interested in developing smart solutions through Industry 4.0 applications, industrial automation, pneumatic systems, and solar panel-based renewable energy solutions to create efficient and innovative technologies.
+                        Skilled in designing, simulating, and implementing intelligent systems using platforms such as Arduino and ESP-based devices, with knowledge of control systems, monitoring, data acquisition, and automation technologies.
                     </p>
                     <div class="about-stats">
                         <div class="stat">
@@ -86,19 +74,20 @@
                             <span class="stat-label">Years of Study</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Tools Mastered</span>
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Core Skills</span>
                         </div>
                     </div>
                 </div>
                 <div class="about-image fade-in">
-                    <img src="alvinganteng.png" alt="Alvin Naufal Aulia" class="profile-image">
+                    <img src="alvinganteng.png" alt="Alvin Nauval Aulia" class="profile-image" style="width: 100%; max-width: 350px; height: auto; border-radius: 10px; object-fit: cover;">
                 </div>
             </div>
         </div>
     </section>
 
-<section id="skills" class="skills section">
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
         <div class="container">
             <h2 class="section-title fade-in">Skills & Expertise</h2>
             <div class="skills-grid">
@@ -136,8 +125,7 @@
         </div>
     </section>
 
-<!-- Featured Projects Section -->
-<!-- Featured Projects Section -->
+    <!-- Featured Projects Section -->
     <section id="portfolio" class="portfolio section">
         <div class="container">
             <h2 class="section-title fade-in">Featured Projects</h2>
@@ -155,7 +143,7 @@
                     <div class="portfolio-image">
                         <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&auto=format&fit=crop&q=60" alt="IoT Smart KWh Meter">
                         <div class="portfolio-overlay">
-                            <a href="#" class="portfolio-link" aria-label="View IoT Smart KWh Meter project">View Project</a>
+                            <a href="#" class="portfolio-link">View Project</a>
                         </div>
                     </div>
                     <div class="portfolio-content">
@@ -164,7 +152,6 @@
                         <div class="portfolio-tags">
                             <span class="tag">IoT</span>
                             <span class="tag">Energy Monitoring</span>
-                            <span class="tag">Embedded</span>
                         </div>
                     </div>
                 </div>
@@ -174,16 +161,15 @@
                     <div class="portfolio-image">
                         <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=500&auto=format&fit=crop&q=60" alt="Water Level Monitoring LabVIEW">
                         <div class="portfolio-overlay">
-                            <a href="#" class="portfolio-link" aria-label="View LabVIEW project">View Project</a>
+                            <a href="#" class="portfolio-link">View Project</a>
                         </div>
                     </div>
                     <div class="portfolio-content">
-                        <h3 class="portfolio-title">Water Level Monitoring</h3>
+                        <h3 class="portfolio-title">Water Level Monitoring via LabVIEW</h3>
                         <p class="portfolio-description">A data acquisition (DAQ) and water level monitoring system utilizing visual instrumentation in LabVIEW.</p>
                         <div class="portfolio-tags">
                             <span class="tag">LabVIEW</span>
                             <span class="tag">DAQ</span>
-                            <span class="tag">Instrumentation</span>
                         </div>
                     </div>
                 </div>
@@ -193,16 +179,15 @@
                     <div class="portfolio-image">
                         <img src="https://images.unsplash.com/photo-1531747118685-ca8fa6e08806?w=500&auto=format&fit=crop&q=60" alt="Food Dehydrator MATLAB GUI">
                         <div class="portfolio-overlay">
-                            <a href="#" class="portfolio-link" aria-label="View Food Dehydrator project">View Project</a>
+                            <a href="#" class="portfolio-link">View Project</a>
                         </div>
                     </div>
                     <div class="portfolio-content">
-                        <h3 class="portfolio-title">Food Dehydrator</h3>
+                        <h3 class="portfolio-title">Food Dehydrator using MATLAB GUI</h3>
                         <p class="portfolio-description">Development of a Graphical User Interface (GUI) in MATLAB for temperature control and food drying time estimation.</p>
                         <div class="portfolio-tags">
                             <span class="tag">MATLAB</span>
                             <span class="tag">GUI</span>
-                            <span class="tag">Control System</span>
                         </div>
                     </div>
                 </div>
@@ -212,7 +197,7 @@
                     <div class="portfolio-image">
                         <img src="https://images.unsplash.com/photo-1620283085439-39620a1e21c4?w=500&auto=format&fit=crop&q=60" alt="ATS Control Panel">
                         <div class="portfolio-overlay">
-                            <a href="#" class="portfolio-link" aria-label="View ATS Panel project">View Project</a>
+                            <a href="#" class="portfolio-link">View Project</a>
                         </div>
                     </div>
                     <div class="portfolio-content">
@@ -220,8 +205,7 @@
                         <p class="portfolio-description">An automatic power transfer system from the main grid (PLN) to the backup source (Generator) during power outages.</p>
                         <div class="portfolio-tags">
                             <span class="tag">Power System</span>
-                            <span class="tag">Wiring</span>
-                            <span class="tag">ATS</span>
+                            <span class="tag">ATS Panel</span>
                         </div>
                     </div>
                 </div>
@@ -231,7 +215,7 @@
                     <div class="portfolio-image">
                         <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500&auto=format&fit=crop&q=60" alt="3-Phase Motor Control Panel PLC HMI">
                         <div class="portfolio-overlay">
-                            <a href="#" class="portfolio-link" aria-label="View Motor Control project">View Project</a>
+                            <a href="#" class="portfolio-link">View Project</a>
                         </div>
                     </div>
                     <div class="portfolio-content">
@@ -240,7 +224,6 @@
                         <div class="portfolio-tags">
                             <span class="tag">PLC</span>
                             <span class="tag">HMI</span>
-                            <span class="tag">Electrical Drives</span>
                         </div>
                     </div>
                 </div>
@@ -250,7 +233,7 @@
                     <div class="portfolio-image">
                         <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?w=500&auto=format&fit=crop&q=60" alt="Pneumatic Control System">
                         <div class="portfolio-overlay">
-                            <a href="#" class="portfolio-link" aria-label="View Pneumatic project">View Project</a>
+                            <a href="#" class="portfolio-link">View Project</a>
                         </div>
                     </div>
                     <div class="portfolio-content">
@@ -258,8 +241,7 @@
                         <p class="portfolio-description">Design of sequential electro-pneumatic circuits to drive actuator cylinders for material testing or molding processes.</p>
                         <div class="portfolio-tags">
                             <span class="tag">Pneumatic</span>
-                            <span class="tag">Electro-Pneumatic</span>
-                            <span class="tag">Actuator</span>
+                            <span class="tag">Actuators</span>
                         </div>
                     </div>
                 </div>
@@ -269,16 +251,15 @@
                     <div class="portfolio-image">
                         <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&auto=format&fit=crop&q=60" alt="Solar Panel Tracker">
                         <div class="portfolio-overlay">
-                            <a href="#" class="portfolio-link" aria-label="View Solar Tracker project">View Project</a>
+                            <a href="#" class="portfolio-link">View Project</a>
                         </div>
                     </div>
                     <div class="portfolio-content">
                         <h3 class="portfolio-title">Dual-Axis Solar Panel Tracker</h3>
                         <p class="portfolio-description">A sun-tracking system based on a microcontroller and LDR sensors to optimize energy absorption on solar panels.</p>
                         <div class="portfolio-tags">
-                            <span class="tag">Renewable Energy</span>
+                            <span class="tag">Solar</span>
                             <span class="tag">Arduino</span>
-                            <span class="tag">Tracking System</span>
                         </div>
                     </div>
                 </div>
@@ -286,68 +267,19 @@
         </div>
     </section>
 
-    <section id="testimonials" class="testimonials section">
-        <div class="container">
-            <h2 class="section-title fade-in">What Clients Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">"Exceptional work quality and attention to detail. The project was delivered on time and exceeded our expectations."</p>
-                        <div class="testimonial-author">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60" alt="Sarah Johnson" class="author-image">
-                            <div class="author-info">
-                                <h4 class="author-name">Sarah Johnson</h4>
-                                <p class="author-title">CEO, TechStart Inc.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">"Professional, creative, and reliable. I highly recommend for any design or development project."</p>
-                        <div class="testimonial-author">
-                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60" alt="Michael Chen" class="author-image">
-                            <div class="author-info">
-                                <h4 class="author-name">Michael Chen</h4>
-                                <p class="author-title">Marketing Director, GrowthCo</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">"Outstanding communication and project management. The final result was exactly what we envisioned."</p>
-                        <div class="testimonial-author">
-                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&auto=format&fit=crop&q=60" alt="Emily Rodriguez" class="author-image">
-                            <div class="author-info">
-                                <h4 class="author-name">Emily Rodriguez</h4>
-                                <p class="author-title">Founder, Creative Studio</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Contact Section -->
     <section id="contact" class="contact section">
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info fade-in">
-                    <h2 class="section-title">Let's Work Together</h2>
+                    <h2 class="section-title">Let's Connect</h2>
                     <p class="contact-description">
-                        Ready to bring your ideas to life? I'd love to hear about your project and discuss how we can create something amazing together.
+                        Interested in collaboration or looking for an engineering student to develop automation, IoT, or power system projects? Feel free to reach out!
                     </p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <span class="contact-label">Email</span>
-                            <a href="mailto:hello@alvinnaufalaulia.com" class="contact-link">hello@alvinnaufalaulia.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">Phone</span>
-                            <a href="tel:+6281234567890" class="contact-link">+62 812-3456-7890</a>
+                            <a href="mailto:alvin.nauval@example.com" class="contact-link">alvin.nauval@example.com</a>
                         </div>
                         <div class="contact-item">
                             <span class="contact-label">Location</span>
@@ -355,28 +287,22 @@
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="LinkedIn">LinkedIn</a>
-                        <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
-                        <a href="#" class="social-link" aria-label="Dribbble">Dribbble</a>
-                        <a href="#" class="social-link" aria-label="GitHub">GitHub</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">GitHub</a>
                     </div>
                 </div>
                 <form class="contact-form fade-in" id="contact-form">
                     <div class="form-group">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
+                        <input type="text" id="name" class="form-input" required>
                     </div>
                     <div class="form-group">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject" class="form-label">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-input" required>
+                        <input type="email" id="email" class="form-input" required>
                     </div>
                     <div class="form-group">
                         <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                        <textarea id="message" class="form-textarea" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="submit-button">Send Message</button>
                 </form>
@@ -384,6 +310,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -395,7 +322,6 @@
                         <a href="#home" class="footer-link">Home</a>
                         <a href="#about" class="footer-link">About</a>
                         <a href="#portfolio" class="footer-link">Portfolio</a>
-                        <a href="#contact" class="footer-link">Contact</a>
                     </nav>
                 </div>
             </div>
@@ -403,5 +329,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="lightdarkmood.js"></script>
 </body>
 </html>
