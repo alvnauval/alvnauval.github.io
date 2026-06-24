@@ -3,332 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional portfolio website - Modern minimalist design">
-    <meta name="keywords" content="portfolio, professional, electrical engineering, automation, embedded systems, IoT">
-    <meta name="author" content="Alvin Nauval Aulia">
-    <title>Alvin Nauval Aulia - Professional Portfolio</title>
+    <title>Alvin Nauval Aulia - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="alvinganteng.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="loading-screen">
-        <div class="loading-spinner"></div>
-    </div>
 
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">Alvin Nauval Aulia</a>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content fade-in">
-                <h1 class="hero-title">Alvin Nauval Aulia</h1>
-                <p class="hero-subtitle">Electrical Engineering Student • Automation • Embedded System • IoT • Renewable Energy</p>
-                <p class="hero-description">Developing smart solutions in industrial automation, embedded systems, pneumatic control, and renewable energy technologies using PLC, sensors, and microcontrollers.</p>
-                <a href="#portfolio" class="cta-button">View Projects</a>
-            </div>
-        </div>
-        <div class="hero-scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text fade-in">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="about-description">
-                        Electrical Engineering student specializing in industrial automation, embedded systems, Internet of Things (IoT), and renewable energy technologies. Experienced in control system design, PLC and HMI programming, sensor–actuator integration, pneumatic control systems, and microcontroller-based projects for industrial applications.
-                    </p>
-                    <p class="about-description">
-                        Skilled in designing, simulating, and implementing intelligent systems using platforms such as Arduino and ESP-based devices, with knowledge of control systems, monitoring, data acquisition, and automation technologies.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">10+</span>
-                            <span class="stat-label">Projects Built</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">3+</span>
-                            <span class="stat-label">Years of Study</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">6+</span>
-                            <span class="stat-label">Core Skills</span>
-                        </div>
+    <section id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a href="#hero">
+                        <h1><span>A</span>lvin <span>N</span>auval</h1>
+                    </a>
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger">
+                        <div class="bar"></div>
                     </div>
-                </div>
-                <div class="about-image fade-in">
-                    <img src="alvinganteng.png" alt="Alvin Nauval Aulia" class="profile-image" style="width: 100%; max-width: 350px; height: auto; border-radius: 10px; object-fit: cover;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
-        <div class="container">
-            <h2 class="section-title fade-in">Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">📟</div>
-                    <h3 class="skill-title">PLC Programming</h3>
-                    <p class="skill-description">Ladder Diagram, Structured Text, and HMI/SCADA design for industrial controllers.</p>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">⚡</div>
-                    <h3 class="skill-title">Electrical Control Systems & Wiring</h3>
-                    <p class="skill-description">Design and assembly of control panels, circuit protection, and industrial wiring.</p>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">🤖</div>
-                    <h3 class="skill-title">Industrial Automation Systems</h3>
-                    <p class="skill-description">Implementation of automated production lines, motor drives, and factory automation concepts.</p>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">🔌</div>
-                    <h3 class="skill-title">Sensor Integration</h3>
-                    <p class="skill-description">Interfacing industrial sensors and actuators with microcontrollers and controllers for data acquisition.</p>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">🌐</div>
-                    <h3 class="skill-title">IoT Development</h3>
-                    <p class="skill-description">Developing smart monitoring systems using ESP32/Arduino, MQTT protocols, and cloud dashboards.</p>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">💨</div>
-                    <h3 class="skill-title">Pneumatic Control Systems</h3>
-                    <p class="skill-description">Designing pneumatic and electro-pneumatic circuits for automated mechanical movements.</p>
+                    <ul>
+                        <li><a href="#hero" data-after="Home">Home</a></li>
+                        <li><a href="#services" data-after="Service">Services</a></li>
+                        <li><a href="#projects" data-after="Projects">Projects</a></li>
+                        <li><a href="#about" data-after="About">About</a></li>
+                        <li><a href="#contact" data-after="Contact">Contact</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Projects Section -->
-    <section id="portfolio" class="portfolio section">
-        <div class="container">
-            <h2 class="section-title fade-in">Featured Projects</h2>
-            
-            <div class="portfolio-filters fade-in">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="automation">Automation</button>
-                <button class="filter-btn" data-filter="iot">IoT & Monitoring</button>
-                <button class="filter-btn" data-filter="panels">Control Panels</button>
+    <section id="hero">
+        <div class="hero container">
+            <div>
+                <h1>Hello, <span></span></h1>
+                <h1>My Name is <span></span></h1>
+                <h1>Alvin Nauval <span></span></h1>
+                <a href="#projects" type="button" class="cta">Portfolio</a>
             </div>
+        </div>
+    </section>
 
-            <div class="portfolio-grid">
-                <!-- Project 1 -->
-                <div class="portfolio-item fade-in" data-category="iot">
-                    <div class="portfolio-image">
+    <section id="services">
+        <div class="services container">
+            <div class="service-top">
+                <h1 class="section-title">Serv<span>i</span>ces</h1>
+                <p>I offer advanced engineering solutions tailored for modern industrial needs, combining state-of-the-art automation and intelligent data systems.</p>
+            </div>
+            <div class="service-bottom">
+                <div class="service-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/code.png" alt="Automation Icon"/></div>
+                    <h2>Industrial Automation</h2>
+                    <p>Designing comprehensive automated systems and production lines using high-performance PLC and responsive HMI design.</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/electronic-circuit.png" alt="Embedded Systems Icon"/></div>
+                    <h2>Embedded Systems</h2>
+                    <p>Developing intelligent, microcontroller-based circuits utilizing sensor-actuator integration for specific operations.</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/cloud.png" alt="IoT Icon"/></div>
+                    <h2>IoT & Monitoring</h2>
+                    <p>Building real-time data acquisition and internet-of-things architecture for predictive control and smart grid monitoring.</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt="Control Panel Icon"/></div>
+                    <h2>Control Panel Design</h2>
+                    <p>Assembling robust power distribution and safety mechanisms, including ATS control panel wiring and maintenance layouts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="projects container">
+            <div class="projects-header">
+                <h1 class="section-title">Recent <span>Projects</span></h1>
+            </div>
+            <div class="all-projects">
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>IoT Smart KWh Meter</h1>
+                        <h2>Energy Monitoring</h2>
+                        <p>A real-time electrical energy consumption monitoring system based on the Internet of Things for power efficiency and remote management.</p>
+                    </div>
+                    <div class="project-img">
                         <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&auto=format&fit=crop&q=60" alt="IoT Smart KWh Meter">
-                        <div class="portfolio-overlay">
-                            <a href="#" class="portfolio-link">View Project</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">IoT Smart KWh Meter</h3>
-                        <p class="portfolio-description">A real-time electrical energy consumption monitoring system based on the Internet of Things for power efficiency.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">IoT</span>
-                            <span class="tag">Energy Monitoring</span>
-                        </div>
                     </div>
                 </div>
-
-                <!-- Project 2 -->
-                <div class="portfolio-item fade-in" data-category="iot">
-                    <div class="portfolio-image">
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>Water Level via LabVIEW</h1>
+                        <h2>Data Acquisition (DAQ)</h2>
+                        <p>A data acquisition (DAQ) and water level monitoring system utilizing customized visual instrumentation circuits inside LabVIEW environment.</p>
+                    </div>
+                    <div class="project-img">
                         <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=500&auto=format&fit=crop&q=60" alt="Water Level Monitoring LabVIEW">
-                        <div class="portfolio-overlay">
-                            <a href="#" class="portfolio-link">View Project</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Water Level Monitoring via LabVIEW</h3>
-                        <p class="portfolio-description">A data acquisition (DAQ) and water level monitoring system utilizing visual instrumentation in LabVIEW.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">LabVIEW</span>
-                            <span class="tag">DAQ</span>
-                        </div>
                     </div>
                 </div>
-
-                <!-- Project 3 -->
-                <div class="portfolio-item fade-in" data-category="automation">
-                    <div class="portfolio-image">
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>Food Dehydrator System</h1>
+                        <h2>MATLAB GUI & Control System</h2>
+                        <p>Development of a Graphical User Interface (GUI) in MATLAB for strict temperature control and advanced food drying duration estimation.</p>
+                    </div>
+                    <div class="project-img">
                         <img src="https://images.unsplash.com/photo-1531747118685-ca8fa6e08806?w=500&auto=format&fit=crop&q=60" alt="Food Dehydrator MATLAB GUI">
-                        <div class="portfolio-overlay">
-                            <a href="#" class="portfolio-link">View Project</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Food Dehydrator using MATLAB GUI</h3>
-                        <p class="portfolio-description">Development of a Graphical User Interface (GUI) in MATLAB for temperature control and food drying time estimation.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">MATLAB</span>
-                            <span class="tag">GUI</span>
-                        </div>
                     </div>
                 </div>
-
-                <!-- Project 4 -->
-                <div class="portfolio-item fade-in" data-category="panels">
-                    <div class="portfolio-image">
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>ATS Control Panel</h1>
+                        <h2>Power System Management</h2>
+                        <p>An automatic power transfer system architecture designed to shift load safely from main grid line (PLN) to internal Generator during blackouts.</p>
+                    </div>
+                    <div class="project-img">
                         <img src="https://images.unsplash.com/photo-1620283085439-39620a1e21c4?w=500&auto=format&fit=crop&q=60" alt="ATS Control Panel">
-                        <div class="portfolio-overlay">
-                            <a href="#" class="portfolio-link">View Project</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Automatic Transfer Switch (ATS) Control Panel</h3>
-                        <p class="portfolio-description">An automatic power transfer system from the main grid (PLN) to the backup source (Generator) during power outages.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Power System</span>
-                            <span class="tag">ATS Panel</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="portfolio-item fade-in" data-category="panels">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500&auto=format&fit=crop&q=60" alt="3-Phase Motor Control Panel PLC HMI">
-                        <div class="portfolio-overlay">
-                            <a href="#" class="portfolio-link">View Project</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">3-Phase Motor Control Panel (PLC & HMI)</h3>
-                        <p class="portfolio-description">A speed control, protection, and operational monitoring system for 3-phase induction motors based on PLC and HMI interface.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">PLC</span>
-                            <span class="tag">HMI</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="portfolio-item fade-in" data-category="automation">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?w=500&auto=format&fit=crop&q=60" alt="Pneumatic Control System">
-                        <div class="portfolio-overlay">
-                            <a href="#" class="portfolio-link">View Project</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Pneumatic Control System for Mold Molding Machine</h3>
-                        <p class="portfolio-description">Design of sequential electro-pneumatic circuits to drive actuator cylinders for material testing or molding processes.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Pneumatic</span>
-                            <span class="tag">Actuators</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 7 -->
-                <div class="portfolio-item fade-in" data-category="iot">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&auto=format&fit=crop&q=60" alt="Solar Panel Tracker">
-                        <div class="portfolio-overlay">
-                            <a href="#" class="portfolio-link">View Project</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Dual-Axis Solar Panel Tracker</h3>
-                        <p class="portfolio-description">A sun-tracking system based on a microcontroller and LDR sensors to optimize energy absorption on solar panels.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Solar</span>
-                            <span class="tag">Arduino</span>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info fade-in">
-                    <h2 class="section-title">Let's Connect</h2>
-                    <p class="contact-description">
-                        Interested in collaboration or looking for an engineering student to develop automation, IoT, or power system projects? Feel free to reach out!
-                    </p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="contact-label">Email</span>
-                            <a href="mailto:alvin.nauval@example.com" class="contact-link">alvin.nauval@example.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">Location</span>
-                            <span class="contact-text">Semarang, Indonesia</span>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link">LinkedIn</a>
-                        <a href="#" class="social-link">GitHub</a>
-                    </div>
+    <section id="about">
+        <div class="about container">
+            <div class="col-left">
+                <div class="about-img">
+                    <img src="alvinganteng.png" alt="Alvin Profile Picture">
                 </div>
-                <form class="contact-form fade-in" id="contact-form">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" class="form-textarea" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
+            </div>
+            <div class="col-right">
+                <h1 class="section-title">About <span>me</span></h1>
+                <h2>Electrical Engineering Student</h2>
+                <p>I am a passionate Electrical Engineering student specializing in industrial automation, embedded systems, Internet of Things (IoT), and renewable energy technologies. Driven by practical innovation, I love solving complex engineering problems, designing automated manufacturing modules, programming PLC logic, and turning blueprints into fully functional systems.</p>
+                <a href="./assets/my-cv.pdf" download class="cta">Download Resume</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <p class="footer-text">&copy; 2026 Alvin Nauval Aulia. All rights reserved.</p>
+    <section id="contact">
+        <div class="contact container">
+            <div>
+                <h1 class="section-title">Contact <span>info</span></h1>
+            </div>
+            <div class="contact-items">
+                <div class="contact-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" alt="Phone Icon"/></div>
+                    <div class="contact-info">
+                        <h1>Phone</h1>
+                        <h2>+62 812 3456 7890</h2>
+                        <h2>+62 821 9876 5432</h2>
+                    </div>
                 </div>
-                <div class="footer-right">
-                    <nav class="footer-nav">
-                        <a href="#home" class="footer-link">Home</a>
-                        <a href="#about" class="footer-link">About</a>
-                        <a href="#portfolio" class="footer-link">Portfolio</a>
-                    </nav>
+                <div class="contact-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" alt="Email Icon"/></div>
+                    <div class="contact-info">
+                        <h1>Email</h1>
+                        <h2>alvin.nauval@example.com</h2>
+                        <h2>contact@alvinnauval.dev</h2>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" alt="Address Icon"/></div>
+                    <div class="contact-info">
+                        <h1>Address</h1>
+                        <h2>Semarang, Central Java, Indonesia</h2>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </section>
+
+    <section id="footer">
+        <div class="footer container">
+            <div class="brand">
+                <h1><span>A</span>lvin <span>N</span>auval</h1>
+            </div>
+            <h2>Your Smart Automation Solution</h2>
+            <div class="social-icon">
+                <div class="social-item"><a href="#"><img src="https://img.icons8.com/fluent/50/000000/linkedin.png" alt="LinkedIn"/></a></div>
+                <div class="social-item"><a href="#"><img src="https://img.icons8.com/fluent/50/000000/github.png" alt="GitHub"/></a></div>
+                <div class="social-item"><a href="#"><img src="https://img.icons8.com/fluent/50/000000/twitter.png" alt="Twitter"/></a></div>
+            </div>
+            <p>Copyright © 2026 Alvin Nauval. All rights reserved</p>
+        </div>
+    </section>
 
     <script src="script.js"></script>
-    <script src="lightdarkmood.js"></script>
 </body>
 </html>
