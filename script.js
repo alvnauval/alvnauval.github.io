@@ -1,52 +1,28 @@
-```json
-{
-  "name": "Alvin Nauval Aulia",
-  "title": "Electronics Engineering Student",
-  "education": [
-    {
-      "institution": "Politeknik Negeri Semarang",
-      "major": "D3 Electronics Engineering",
-      "year": "2023 - Present"
-    },
-    {
-      "institution": "SMK Tunas Harapan Pati",
-      "major": "Industrial Automation Engineering",
-      "year": "2020 - 2023"
-    }
-  ],
-  "skills": [
-    "PLC Programming",
-    "Industrial Automation",
-    "Electrical Control Systems",
-    "IoT Development",
-    "Sensor Integration",
-    "Pneumatic Systems"
-  ],
-  "experience": [
-    {
-      "position": "Quality Control",
-      "company": "CV Sarana Cipta Media",
-      "period": "September 2025 - December 2025"
-    },
-    {
-      "position": "Electrical Maintenance",
-      "company": "PT Yogya Presisi Tehnikatama Industry",
-      "period": "September 2022 - December 2022"
-    },
-    {
-      "position": "Electronics Service Division",
-      "company": "PT Laju Perdana Indah",
-      "period": "June 2022 - August 2022"
-    }
-  ],
-  "certificates": [
-    "WECON Automation Technical",
-    "Industrial Automation Technician (BNSP)"
-  ],
-  "contact": {
-    "phone": "081245096541",
-    "email": "alvinnauvalaulia@gmail.com",
-    "address": "Pati, Central Java, Indonesia"
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".nav-list ul");
+const menuItem = document.querySelectorAll(".nav-list ul li a");
+const header = document.querySelector(".header.container");
+
+// 1. Fungsi Klik Hamburger Menu
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  mobileMenu.classList.toggle("active");
+});
+
+// 2. Fungsi Menutup Menu Otomatis ketika Link Navigasi Diklik
+menuItem.forEach((item) => {
+  item.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("active");
+  });
+});
+
+// 3. Efek Scroll Navbar Mengubah Warna Latar Belakang (Glassmorphism ke Gelap Solid)
+document.addEventListener("scroll", () => {
+  var scroll_position = window.scrollY;
+  if (scroll_position > 150) {
+    header.style.backgroundColor = "#29323c";
+  } else {
+    header.style.backgroundColor = "rgba(31, 30, 30, 0.24)";
   }
-}
-```
+});
