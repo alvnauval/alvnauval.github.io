@@ -1,28 +1,40 @@
-const hamburger = document.querySelector(".hamburger");
-const mobileMenu = document.querySelector(".nav-list ul");
-const menuItem = document.querySelectorAll(".nav-list ul li a");
-const header = document.querySelector(".header.container");
+const hamburger = document.querySelector("#hamburger");
+const mobileMenu = document.querySelector("#nav-menu");
+const menuItem = document.querySelectorAll(".nav-link");
+const navbar = document.querySelector("#navbar");
+const loadingScreen = document.querySelector("#loading-screen");
 
+// 1. Loading Screen Timeout
+window.addEventListener("load", () => {
+  if (loadingScreen) {
+    loadingScreen.style.display = "none";
+  }
+});
+
+// 2. Toggle Hamburger Menu (Buka/Tutup)
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   mobileMenu.classList.toggle("active");
 });
 
-// The classList property allows you to interact with the classes of an HTML element.
+// 3. Menutup Menu otomatis saat salah satu link diklik
 menuItem.forEach((item) => {
   item.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    mobileMenu.classList.toggle("active");
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("active");
+    
+    // Mengatur kelas active pada menu yang sedang diklik
+    menuItem.forEach(link => link.classList.remove("active"));
+    item.classList.add("active");
   });
 });
 
-// after hero
+// 4. Mengubah background navbar saat scroll melewati Hero Section
 document.addEventListener("scroll", () => {
   var scroll_position = window.scrollY;
-  if (scroll_position > 250) {
-    header.style.backgroundColor = "#29323c";
+  if (scroll_position > 150) {
+    navbar.classList.add("scrolled");
   } else {
-    header.style.backgroundColor = "transparent";
+    navbar.classList.remove("scrolled");
   }
 });
-
