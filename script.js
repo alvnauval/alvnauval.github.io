@@ -3,7 +3,7 @@ const mobileMenu = document.querySelector(".nav-list ul");
 const menuItem = document.querySelectorAll(".nav-list ul li a");
 const header = document.querySelector(".header.container");
 
-// 1. Fungsi Klik Hamburger Menu (Buka / Tutup)
+// 1. Fungsi Klik Hamburger Menu
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   mobileMenu.classList.toggle("active");
@@ -17,12 +17,12 @@ menuItem.forEach((item) => {
   });
 });
 
-// 3. Efek Scroll Navbar (Mengubah warna dari semi-transparan ke abu-abu gelap solid)
+// 3. Efek Scroll Navbar Mengubah Warna Latar Belakang (Glassmorphism ke Gelap Solid)
 document.addEventListener("scroll", () => {
   var scroll_position = window.scrollY;
   if (scroll_position > 150) {
-    header.style.backgroundColor = "#29323c"; // Warna saat di-scroll ke bawah
+    header.style.backgroundColor = "#29323c";
   } else {
-    header.style.backgroundColor = "rgba(31, 30, 30, 0.24)"; // Warna transparan awal
+    header.style.backgroundColor = "rgba(31, 30, 30, 0.24)";
   }
 });
