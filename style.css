@@ -1,72 +1,10 @@
 
+
 image(8).png
 
 Pasted text.txt
 Document
 perbaiki pada bagian skil
-
-Masalah pada bagian Skills terjadi karena struktur HTML bagian Skill 4 (Sensor Integration) salah. Tag <div class="icon"> belum ditutup sebelum <h2> dan <p>, sehingga card berikutnya (IoT Development) masuk ke dalam card Sensor dan membuat layout bertumpuk seperti gambar. Pasted text.txt
-
-Ganti seluruh bagian Skill 4 dan Skill 5 dengan kode ini:
-
-<!-- Skill 4 -->
-<div class="service-item">
-    <div class="icon">
-        <img src="images/sensor.png" alt="Sensor Icon">
-    </div>
-
-    <h2>Sensor Integration</h2>
-
-    <p>
-        Calibrating and interfacing industrial sensors such as temperature,
-        pressure, ultrasonic, and proximity sensors with microcontrollers
-        and control systems.
-    </p>
-</div>
-
-
-<!-- Skill 5 -->
-<div class="service-item">
-    <div class="icon">
-        <img src="https://img.icons8.com/bubbles/100/000000/cloud.png" alt="IoT Icon"/>
-    </div>
-
-    <h2>IoT Development</h2>
-
-    <p>
-        Developing IoT-based monitoring systems using ESP32, ESP8266,
-        and cloud platforms for real-time data acquisition and remote control
-        applications.
-    </p>
-</div>
-Sekalian saya sarankan perbaiki Skill 6 supaya konsisten:
-
-<!-- Skill 6 -->
-<div class="service-item">
-    <div class="icon">
-        <img src="https://img.icons8.com/bubbles/100/000000/maintenance.png" alt="Pneumatic Icon"/>
-    </div>
-
-    <h2>Pneumatic Control Systems</h2>
-
-    <p>
-        Designing pneumatic automation systems including cylinders,
-        solenoid valves, and sequential control circuits for industrial
-        applications such as molding machine automation.
-    </p>
-</div>
-Hasilnya:
-
-Card Sensor Integration tidak menimpa card IoT lagi
-
-Semua skill kembali sejajar
-
-Deskripsi lebih sesuai dengan profil kamu (PLC, IoT, otomasi industri, molding pneumatic)
-
-Struktur HTML lebih rapi dan aman untuk CSS grid
-
-Masalah utama bukan CSS, tetapi closing div yang hilang pada HTML Skills. Pasted text.txt
-
 
 
 Pasted text(1).txt
@@ -96,6 +34,234 @@ File CSS hasil edit bisa digunakan menggantikan file lama:
 Download style_fixed.css
 
 Ganti nama menjadi style.css di folder portfolio kamu. Masalah utama sebelumnya memang dari struktur HTML Skill 4 yang membuat layout CSS membaca card secara tidak normal, tetapi tambahan CSS ini membuat tampilannya lebih stabil. Pasted text.txt
+
+
+bagian sertifikat dan contak masih wrna putih
+
+Masalah warna putih pada Certificates dan Contact kemungkinan karena ada style global p { color: black; } di CSS awal yang menimpa beberapa bagian, atau CSS section tersebut belum memiliki selector yang cukup kuat. Pasted text.txt
+
+Tambahkan kode ini paling bawah file style.css (agar override CSS sebelumnya):
+
+/* ==========================================
+   FIX CERTIFICATES & CONTACT COLOR
+========================================== */
+
+/* CERTIFICATES */
+#certificates {
+    background-image: linear-gradient(180deg, #202730 0%, #1f252d 100%);
+}
+
+#certificates .section-title {
+    color: white !important;
+}
+
+#certificates .service-top p {
+    color: #ccd6f6 !important;
+}
+
+#certificates .cert-card {
+    background: rgba(255,255,255,0.04);
+}
+
+#certificates .cert-content h2 {
+    color: white !important;
+}
+
+#certificates .cert-content h3 {
+    color: crimson !important;
+}
+
+#certificates .cert-content p {
+    color: #a8b2d1 !important;
+}
+
+
+/* CONTACT */
+#contact {
+    background-image: linear-gradient(180deg, #1f252d 0%, #29323c 100%);
+}
+
+#contact .section-title {
+    color: white !important;
+}
+
+#contact .contact-subtitle {
+    color: crimson !important;
+}
+
+#contact .contact-tagline {
+    color: #ccd6f6 !important;
+}
+
+#contact .contact-item {
+    background: rgba(255,255,255,0.04);
+}
+
+#contact .contact-info h1 {
+    color: white !important;
+}
+
+#contact .contact-info h2 {
+    color: #ccd6f6 !important;
+}
+
+
+/* GLOBAL FIX */
+#certificates p,
+#contact p {
+    color: #a8b2d1 !important;
+}
+Setelah itu:
+
+Simpan style.css
+
+Refresh browser pakai Ctrl + F5 (supaya cache CSS lama hilang)
+
+Hasilnya:
+
+Background sertifikat tetap dark
+
+Judul sertifikat putih
+
+Deskripsi abu terang
+
+Contact card kembali tema gelap seperti Skills/Education/Projects
+
+Tidak ada teks putih menyatu dengan background lagi.
+
+
+image(9).png
+
+Dari screenshot terlihat masalahnya bukan di bagian Certificates/Contact, tetapi seluruh halaman About menjadi putih. Background dark yang kamu buat tidak masuk karena ada CSS lama yang masih menimpa.
+
+Penyebabnya ada di bagian CSS ini:
+
+#about {
+  background-color: #1f252d;
+}
+tetapi kemungkinan rule .container dan beberapa selector lama membuat section tidak mengikuti tinggi layout. Kita rapikan bagian About + global text.
+
+Tambahkan kode ini di paling bawah style.css:
+
+/* ==========================================
+   FINAL COLOR FIX ALL SECTION
+========================================== */
+
+/* ABOUT */
+#about {
+    background-image: linear-gradient(180deg, #1f252d 0%, #29323c 100%) !important;
+    width: 100%;
+    min-height: 100vh;
+}
+
+#about .section-title {
+    color: white !important;
+}
+
+#about .col-right h2 {
+    color: crimson !important;
+}
+
+#about .col-right p {
+    color: #a8b2d1 !important;
+}
+
+
+/* FIX GLOBAL SECTION TEXT */
+#about p,
+#certificates p,
+#contact p {
+    color: #a8b2d1 !important;
+}
+
+
+/* CERTIFICATE */
+#certificates {
+    background-image: linear-gradient(180deg,#29323c,#1f252d) !important;
+}
+
+#certificates .cert-card {
+    background: rgba(255,255,255,0.05);
+}
+
+#certificates h2 {
+    color:white !important;
+}
+
+#certificates h3 {
+    color:crimson !important;
+}
+
+
+/* CONTACT */
+#contact {
+    background-image: linear-gradient(180deg,#1f252d,#29323c) !important;
+}
+
+#contact .contact-item {
+    background:rgba(255,255,255,0.05);
+}
+
+#contact h1 {
+    color:white !important;
+}
+
+#contact h2 {
+    color:#ccd6f6 !important;
+}
+Kemudian lakukan:
+
+Save style.css
+
+Masuk Chrome
+
+Tekan:
+
+CTRL + SHIFT + R
+untuk reload CSS tanpa cache.
+
+Setelah itu tampilan akan konsisten:
+
+About → background gelap
+
+Skills → gelap
+
+Education → gelap
+
+Experience → gelap
+
+Projects → gelap
+
+Certificates → gelap
+
+Contact → gelap
+
+Satu hal lagi: di screenshot nama navbar ALVIN NAUVAL sudah bagus, tapi bagian About terlalu jauh antara foto dan teks. Setelah warna fix, bisa kita rapikan spacing supaya lebih seperti portfolio profesional.
+
+
+kembalikan kode ke yang semula saja
+
+Baik, kembalikan ke versi semula saja. Jangan gunakan tambahan CSS yang saya berikan terakhir.
+
+Langkahnya:
+
+Hapus kode tambahan yang saya suruh taruh di paling bawah style.css, yaitu bagian:
+
+/* FINAL COLOR FIX ALL SECTION */
+dan juga kode:
+
+/* FIX CERTIFICATES & CONTACT COLOR */
+Gunakan kembali CSS asli kamu yang sebelumnya. File awal yang kamu upload sudah merupakan versi asli sebelum perubahan. Pasted text.txt
+
+Setelah dikembalikan:
+
+tekan Ctrl + S
+
+buka browser
+
+tekan Ctrl + F5
+
+Nanti tampilannya kembali seperti sebelum perubahan (termasuk warna dan layout awal).
 
 
 
@@ -887,74 +1053,206 @@ box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 /* ==========================================
    CERTIFICATES SECTION
 ========================================== */
+
+#certificates{
+    background-image: linear-gradient(180deg, #202730 0%, #1f252d 100%);
+    width: 100%;
+    padding: 100px 0;
+}
+
+#certificates .certificates{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#certificates .section-title{
+    color: white !important;
+}
+
+#certificates .service-top p{
+    color: #ccd6f6 !important;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.cert-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.cert-card{
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 5px solid crimson;
+    padding: 30px;
+    border-radius: 15px;
+    transition: .3s ease;
+}
+
+.cert-card:hover{
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.06);
+}
+
+.cert-content h2{
+    color: white;
+    font-size: 2.3rem;
+    margin-bottom: 8px;
+}
+
+.cert-content h3{
+    color: crimson;
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+.cert-content p{
+    color: #a8b2d1 !important;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
 /* ==========================================
-   FIX CERTIFICATES & CONTACT COLOR
+/* ==========================================
+CONTACT SECTION
 ========================================== */
 
-/* CERTIFICATES */
-#certificates {
-    background-image: linear-gradient(180deg, #202730 0%, #1f252d 100%);
+#contact{
+background-image: linear-gradient(180deg, #1f252d 0%, #29323c 100%);
+width: 100%;
+padding: 100px 0;
 }
 
-#certificates .section-title {
-    color: white !important;
+#contact .contact{
+flex-direction: column;
+text-align: center;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
 }
 
-#certificates .service-top p {
-    color: #ccd6f6 !important;
+/* Title */
+
+#contact .section-title{
+color: white !important;
 }
 
-#certificates .cert-card {
-    background: rgba(255,255,255,0.04);
+/* Subtitle */
+
+#contact .contact-subtitle{
+color: crimson !important;
+font-size: 3rem;
+font-weight: 600;
+text-align: center;
+margin: 15px 0;
+letter-spacing: 1px;
 }
 
-#certificates .cert-content h2 {
-    color: white !important;
+/* Description */
+
+#contact .contact-tagline{
+color: #ccd6f6 !important;
+font-size: 1.8rem;
+line-height: 3rem;
+max-width: 900px;
+margin: 0 auto 50px auto;
 }
 
-#certificates .cert-content h3 {
-    color: crimson !important;
+/* Contact Cards */
+
+#contact .contact-items{
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: stretch;
+flex-wrap: wrap;
+gap: 25px;
 }
 
-#certificates .cert-content p {
-    color: #a8b2d1 !important;
+#contact .contact-item{
+width: 320px;
+min-height: 130px;
+
+display: flex;
+align-items: center;
+
+padding: 20px;
+
+background: rgba(255,255,255,0.04);
+border: 1px solid rgba(255,255,255,0.08);
+border-radius: 12px;
+
+transition: .3s ease;
 }
 
-
-/* CONTACT */
-#contact {
-    background-image: linear-gradient(180deg, #1f252d 0%, #29323c 100%);
+#contact .contact-item{
+transform: translateY(-5px);
+border-color: crimson;
 }
 
-#contact .section-title {
-    color: white !important;
+#contact .icon{
+width: 70px;
+height: 70px;
+margin-right: 15px;
 }
 
-#contact .contact-subtitle {
-    color: crimson !important;
+#contact .contact-info{
+text-align: left;
 }
 
-#contact .contact-tagline {
-    color: #ccd6f6 !important;
+#contact .contact-info h1{
+font-size: 2.2rem;
+color: white;
+margin-bottom: 8px;
 }
 
-#contact .contact-item {
-    background: rgba(255,255,255,0.04);
+#contact .contact-info h2{
+font-size: 1.5rem;
+color: #ccd6f6;
+font-weight: 400;
 }
 
-#contact .contact-info h1 {
-    color: white !important;
+/* Mobile */
+
+@media only screen and (max-width:768px){
+
+#contact .contact-subtitle{
+    font-size: 2.2rem;
 }
 
-#contact .contact-info h2 {
-    color: #ccd6f6 !important;
+#contact .contact-tagline{
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    padding: 0 10px;
 }
 
+#contact .contact-item{
+    width: 100%;
+}
+}
 
-/* GLOBAL FIX */
-#certificates p,
-#contact p {
-    color: #a8b2d1 !important;
+/* Mobile */
+
+@media only screen and (max-width:768px){
+
+.contact-subtitle{
+    font-size: 2.2rem;
+}
+
+.contact-tagline{
+    font-size: 1.6rem !important;
+    line-height: 2.6rem;
+    padding: 0 10px;
+}
+
+#contact .contact-item{
+    width: 100%;
+}
 }
 /* Footer Section */
 #footer { background-image: linear-gradient(60deg, #1f252d 0%, #29323c 100%); width: 100vw; }
