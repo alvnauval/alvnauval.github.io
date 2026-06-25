@@ -1298,3 +1298,40 @@ padding: 7px 12px;
     color:#a8b2d1 !important;
 
 }
+/* REMOVE WHITE GAP / LINE BETWEEN SECTION */
+
+html,
+body {
+    background:#1f252d;
+    margin:0;
+    padding:0;
+}
+
+
+section {
+    margin:0;
+}
+
+
+#certificates {
+    margin-top:0 !important;
+    border-top:none !important;
+}
+
+
+#certificates::before,
+#contact::before {
+    display:none !important;
+}
+
+
+/* remove empty space */
+#about,
+#skills,
+#education,
+#experience,
+#projects,
+#certificates,
+#contact {
+    overflow:hidden;
+}
