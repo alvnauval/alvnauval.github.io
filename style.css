@@ -488,66 +488,131 @@ p {
   text-align: left !important;
 }
 
-/* Projects Section */
+/* ==========================================
+PROJECTS SECTION
+========================================== */
+
 #projects {
-  background-image: linear-gradient(180deg, #29323c 0%, #1f252d 100%);
-  width: 100%;
-  padding: 100px 0;
+background-image: linear-gradient(180deg, #29323c 0%, #1f252d 100%);
+width: 100%;
+padding: 100px 0;
 }
-#projects .projects { 
-  flex-direction: column !important; 
-  max-width: 1200px; 
-  margin: 0 auto; 
+
+#projects .projects {
+flex-direction: column !important;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
 }
+
 #projects .section-title {
-  color: white !important; /* Memaksa judul utama berwarna putih */
-  margin-bottom: 40px;
+color: white !important;
 }
-#projects .all-projects { 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  flex-direction: column; 
-  width: 100%; 
+
+#projects .projects-header p {
+color: #ccd6f6;
+text-align: center;
+max-width: 700px;
+margin: 0 auto 50px;
+font-size: 1.6rem;
 }
+
+#projects .all-projects {
+display: flex;
+flex-direction: column;
+gap: 25px;
+width: 100%;
+}
+
 #projects .project-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1000px;
-  margin: 30px auto;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+width: 100%;
+background: #202730;
+border-radius: 12px;
+padding: 35px;
+border-left: 5px solid crimson;
+border: 1px solid rgba(255,255,255,0.08);
+box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+transition: all 0.3s ease;
+}
+
+#projects .project-item:hover {
+transform: translateY(-5px);
+border-left-color: #ff4d6d;
+box-shadow: 0 15px 30px rgba(220,20,60,0.15);
 }
 
 #projects .project-info {
-  padding: 40px;
-  flex-basis: 50%;
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #202730; /* Menyelaraskan warna kotak teks proyek */
-  color: white;
+width: 100%;
 }
 
-#projects .project-info h1 { font-size: 3.5rem; font-weight: 500; color: white; }
-#projects .project-info h2 { font-size: 1.8rem; font-weight: 400; margin-top: 10px; color: crimson; }
-#projects .project-info p { color: #a8b2d1 !important; margin-top: 15px; text-align: left; }
-#projects .project-img { flex-basis: 50%; width: 100%; height: 340px; overflow: hidden; }
-#projects .project-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease transform; }
-#projects .project-item:hover .project-img img { transform: scale(1.1); }
-
-@media only screen and (min-width: 768px) {
-  #projects .project-item { flex-direction: row; height: 340px; width: 100%; border-radius: 10px; margin: 20px 0; }
-  #projects .project-item:nth-child(even) { flex-direction: row-reverse; }
-  #projects .project-info, #projects .project-img { height: 100%; }
+#projects .project-info h1 {
+font-size: 3rem;
+color: white;
+margin-bottom: 8px;
+font-weight: 600;
 }
+
+#projects .project-info h2 {
+font-size: 1.7rem;
+color: crimson;
+margin-bottom: 15px;
+font-weight: 500;
+}
+
+#projects .project-info p {
+color: #a8b2d1 !important;
+text-align: left;
+line-height: 2.5rem;
+margin-top: 15px;
+font-size: 1.5rem;
+}
+
+/* Technology Tags */
+.project-tech {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin: 20px 0;
+}
+
+.project-tech span {
+background: rgba(220, 20, 60, 0.15);
+color: #ffffff;
+border: 1px solid rgba(220, 20, 60, 0.4);
+padding: 8px 15px;
+border-radius: 25px;
+font-size: 1.3rem;
+font-weight: 500;
+transition: all 0.3s ease;
+}
+
+.project-tech span:hover {
+background: crimson;
+transform: translateY(-2px);
+cursor: default;
+}
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+
+#projects .project-item {
+padding: 25px;
+}
+
+#projects .project-info h1 {
+font-size: 2.4rem;
+}
+
+#projects .project-info h2 {
+font-size: 1.5rem;
+}
+
+.project-tech span {
+font-size: 1.2rem;
+padding: 7px 12px;
+}
+}
+
 
 /* About Section */
 #about {
