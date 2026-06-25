@@ -761,52 +761,65 @@ padding: 7px 12px;
 }
 
 /* ==========================================
+/* ==========================================
    CONTACT SECTION
-   ========================================== */
+========================================== */
 
-#contact .contact {
+#contact{
+    background-image: linear-gradient(180deg, #1f252d 0%, #29323c 100%);
+    width: 100%;
+    padding: 100px 0;
+}
+
+#contact .contact{
     flex-direction: column;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 20px;
+    padding: 0 20px;
+}
+
+/* Title */
+
+#contact .section-title{
+    color: white !important;
 }
 
 /* Subtitle */
 
-.contact-subtitle{
-    color: crimson;
-    text-align: center;
-    font-size: 2.8rem;
-    font-weight: 600;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-}
-
-/* Slogan */
-
 #contact .contact-subtitle{
     color: crimson !important;
-    background: transparent !important;
     font-size: 3rem;
     font-weight: 600;
     text-align: center;
     margin: 15px 0;
+    letter-spacing: 1px;
 }
+
+/* Description */
 
 #contact .contact-tagline{
     color: #ccd6f6 !important;
-    background: transparent !important;
     font-size: 1.8rem;
-    text-align: center;
     line-height: 3rem;
     max-width: 900px;
     margin: 0 auto 50px auto;
 }
+
+/* Contact Cards */
+
+#contact .contact-items{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
 #contact .contact-item{
     width: 320px;
-    min-height: 120px;
+    min-height: 130px;
 
     display: flex;
     align-items: center;
@@ -825,6 +838,16 @@ padding: 7px 12px;
     border-color: crimson;
 }
 
+#contact .icon{
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+}
+
+#contact .contact-info{
+    text-align: left;
+}
+
 #contact .contact-info h1{
     font-size: 2.2rem;
     color: white;
@@ -835,6 +858,25 @@ padding: 7px 12px;
     font-size: 1.5rem;
     color: #ccd6f6;
     font-weight: 400;
+}
+
+/* Mobile */
+
+@media only screen and (max-width:768px){
+
+    #contact .contact-subtitle{
+        font-size: 2.2rem;
+    }
+
+    #contact .contact-tagline{
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        padding: 0 10px;
+    }
+
+    #contact .contact-item{
+        width: 100%;
+    }
 }
 
 /* Mobile */
