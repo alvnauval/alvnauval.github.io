@@ -1326,4 +1326,49 @@ font-weight: 400;
 #footer .social-item img { filter: grayscale(1); transition: 0.3s ease filter; }
 #footer .social-item img { filter: grayscale(0); }
 #footer p { color: #ccc; font-size: 1.3rem; }
+/* FIX ABOUT SECTION */
 
+#about {
+    background: linear-gradient(180deg, #1f252d 0%, #29323c 100%);
+    min-height: 100vh;
+}
+
+#about .section-title {
+    color: white !important;
+    text-align: center;
+}
+
+#about .section-title span {
+    color: crimson !important;
+}
+
+#about .col-right {
+    color: white;
+}
+
+#about .col-right h2 {
+    color: crimson !important;
+}
+
+#about .col-right p {
+    color: #a8b2d1 !important;
+}
+
+#about .about-stats .stat {
+    background: rgba(255,255,255,0.05);
+}
+
+.stat-number {
+    color: crimson !important;
+}
+
+.stat-label {
+    color: #ccd6f6 !important;
+}
+
+
+/* menjaga judul tidak kepotong */
+#about .col-right h1 {
+    display: block;
+    width: 100%;
+}
