@@ -489,18 +489,39 @@ p {
 }
 
 /* Projects Section */
-#projects .projects { flex-direction: column; max-width: 1200px; margin: 0 auto; padding: 100px 0; }
-#projects .all-projects { display: flex; align-items: center; justify-content: center; flex-direction: column; width: 100%; }
+#projects {
+  background-image: linear-gradient(180deg, #29323c 0%, #1f252d 100%);
+  width: 100%;
+  padding: 100px 0;
+}
+#projects .projects { 
+  flex-direction: column !important; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+#projects .section-title {
+  color: white !important; /* Memaksa judul utama berwarna putih */
+  margin-bottom: 40px;
+}
+#projects .all-projects { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  flex-direction: column; 
+  width: 100%; 
+}
 #projects .project-item {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
+  max-width: 1000px;
   margin: 30px auto;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 #projects .project-info {
@@ -511,19 +532,19 @@ p {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  background-color: #202730; /* Menyelaraskan warna kotak teks proyek */
   color: white;
 }
 
-#projects .project-info h1 { font-size: 3.5rem; font-weight: 500; }
-#projects .project-info h2 { font-size: 1.8rem; font-weight: 400; margin-top: 10px; color: #ff7b93; }
-#projects .project-info p { color: #e5e5e5; margin-top: 15px; }
-#projects .project-img { flex-basis: 50%; width: 100%; height: 300px; overflow: hidden; }
-#projects .project-img img { transition: 0.5s ease transform; }
+#projects .project-info h1 { font-size: 3.5rem; font-weight: 500; color: white; }
+#projects .project-info h2 { font-size: 1.8rem; font-weight: 400; margin-top: 10px; color: crimson; }
+#projects .project-info p { color: #a8b2d1 !important; margin-top: 15px; text-align: left; }
+#projects .project-img { flex-basis: 50%; width: 100%; height: 340px; overflow: hidden; }
+#projects .project-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease transform; }
 #projects .project-item:hover .project-img img { transform: scale(1.1); }
 
 @media only screen and (min-width: 768px) {
-  #projects .project-item { flex-direction: row; height: 400px; width: 100%; border-radius: 10px; margin: 20px 0; }
+  #projects .project-item { flex-direction: row; height: 340px; width: 100%; border-radius: 10px; margin: 20px 0; }
   #projects .project-item:nth-child(even) { flex-direction: row-reverse; }
   #projects .project-info, #projects .project-img { height: 100%; }
 }
