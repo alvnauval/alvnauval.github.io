@@ -6,6 +6,69 @@ Pasted text.txt
 Document
 perbaiki pada bagian skil
 
+Masalah pada bagian Skills terjadi karena struktur HTML bagian Skill 4 (Sensor Integration) salah. Tag <div class="icon"> belum ditutup sebelum <h2> dan <p>, sehingga card berikutnya (IoT Development) masuk ke dalam card Sensor dan membuat layout bertumpuk seperti gambar. Pasted text.txt
+
+Ganti seluruh bagian Skill 4 dan Skill 5 dengan kode ini:
+
+<!-- Skill 4 -->
+<div class="service-item">
+    <div class="icon">
+        <img src="images/sensor.png" alt="Sensor Icon">
+    </div>
+
+    <h2>Sensor Integration</h2>
+
+    <p>
+        Calibrating and interfacing industrial sensors such as temperature,
+        pressure, ultrasonic, and proximity sensors with microcontrollers
+        and control systems.
+    </p>
+</div>
+
+
+<!-- Skill 5 -->
+<div class="service-item">
+    <div class="icon">
+        <img src="https://img.icons8.com/bubbles/100/000000/cloud.png" alt="IoT Icon"/>
+    </div>
+
+    <h2>IoT Development</h2>
+
+    <p>
+        Developing IoT-based monitoring systems using ESP32, ESP8266,
+        and cloud platforms for real-time data acquisition and remote control
+        applications.
+    </p>
+</div>
+Sekalian saya sarankan perbaiki Skill 6 supaya konsisten:
+
+<!-- Skill 6 -->
+<div class="service-item">
+    <div class="icon">
+        <img src="https://img.icons8.com/bubbles/100/000000/maintenance.png" alt="Pneumatic Icon"/>
+    </div>
+
+    <h2>Pneumatic Control Systems</h2>
+
+    <p>
+        Designing pneumatic automation systems including cylinders,
+        solenoid valves, and sequential control circuits for industrial
+        applications such as molding machine automation.
+    </p>
+</div>
+Hasilnya:
+
+Card Sensor Integration tidak menimpa card IoT lagi
+
+Semua skill kembali sejajar
+
+Deskripsi lebih sesuai dengan profil kamu (PLC, IoT, otomasi industri, molding pneumatic)
+
+Struktur HTML lebih rapi dan aman untuk CSS grid
+
+Masalah utama bukan CSS, tetapi closing div yang hilang pada HTML Skills. Pasted text.txt
+
+
 
 Pasted text(1).txt
 Document
