@@ -299,7 +299,10 @@ p {
   #hero h1 { font-size: 7rem; }
 }
 
-/* Skills Section */
+/* ==========================================
+   SKILLS SECTION
+========================================== */
+
 #services {
   background-image: linear-gradient(60deg, #1f252d 0%, #29323c 100%);
   width: 100%;
@@ -313,9 +316,6 @@ p {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #services .section-title {
@@ -327,44 +327,55 @@ p {
 #services .service-top p {
   color: #ccd6f6 !important;
   font-size: 1.6rem;
-  max-width: 600px;
-  margin: 0 auto 50px auto;
+  max-width: 700px;
+  margin: 0 auto 50px;
 }
 
+/* GRID */
+
 #services .service-bottom {
-  display: flex !important;
-  align-items: stretch !important;
-  justify-content: center !important;
-  flex-wrap: wrap !important;
-  gap: 25px !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 25px;
   width: 100%;
 }
 
+/* CARD */
+
 #services .service-item {
-  flex-basis: 100%;
-  display: flex !important;
-  align-items: flex-start;
-  justify-content: transform;
+  flex: 1 1 320px;
+  max-width: 360px;
+
+  display: flex;
   flex-direction: column;
+  align-items: flex-start;
+
   padding: 30px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+
   box-shadow: 0 10px 30px -15px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
+  transition: all .3s ease;
+
   text-align: left;
 }
 
 #services .service-item:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.08);
   border-color: crimson;
-  box-shadow: 0 20px 30px -15px rgba(220, 20, 60, 0.2);
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 20px 30px -15px rgba(220,20,60,0.2);
 }
 
+/* ICON */
+
 #services .service-item .icon {
-  height: 70px;
   width: 70px;
+  height: 70px;
   margin-bottom: 20px;
 }
 
@@ -374,32 +385,40 @@ p {
   object-fit: contain;
 }
 
+/* TITLE */
+
 #services .service-item h2 {
   font-size: 2rem;
   color: white !important;
   margin-bottom: 12px;
   font-weight: 600;
+  line-height: 2.8rem;
 }
+
+/* DESCRIPTION */
 
 #services .service-item p {
   color: #a8b2d1 !important;
-  font-size: 1.4rem;
-  line-height: 2.2rem;
+  font-size: 1.5rem;
+  line-height: 2.6rem;
   margin: 0;
 }
 
+/* TABLET */
+
 @media only screen and (min-width: 768px) {
-  #services .service-bottom .service-item {
-    flex-basis: calc(50% - 25px);
+  #services .service-item {
+    flex: 1 1 calc(50% - 25px);
   }
 }
+
+/* DESKTOP */
 
 @media only screen and (min-width: 1200px) {
-  #services .service-bottom .service-item {
-    flex-basis: calc(33.33% - 25px);
+  #services .service-item {
+    flex: 1 1 calc(33.333% - 25px);
   }
 }
-
 /* ==========================================
    PENDIDIKAN & PENGALAMAN SECTION (WARNA DISELARASKAN)
    ========================================== */
