@@ -786,24 +786,22 @@ padding: 7px 12px;
 
 /* Slogan */
 
-.contact-tagline{
-    color: #ccd6f6 !important;
+#contact .contact-subtitle{
+    color: crimson !important;
+    font-size: 3rem !important;
+    font-weight: 600;
     text-align: center;
-    font-size: 1.9rem !important;
-    line-height: 3rem;
-    max-width: 850px;
-    margin: 0 auto 50px auto;
-    font-weight: 400;
+    margin: 15px 0;
+    letter-spacing: 1px;
 }
 
-/* Contact Cards */
-
-#contact .contact-items{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+#contact .contact-tagline{
+    color: #ccd6f6 !important;
+    font-size: 1.8rem !important;
+    text-align: center;
+    line-height: 3rem;
+    max-width: 900px;
+    margin: 0 auto 50px auto;
 }
 
 #contact .contact-item{
