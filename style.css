@@ -487,6 +487,101 @@ p {
   line-height: 2.4rem;
   text-align: left !important;
 }
+/* ===== Education Cards ===== */
+
+.edu-grid,
+.exp-grid{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    width:100%;
+    max-width:1100px;
+    margin-top:50px;
+}
+
+.edu-card,
+.exp-card{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    background:#202730;
+    padding:30px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,0.08);
+    border-left:5px solid crimson;
+    transition:.3s;
+}
+
+.edu-card:hover,
+.exp-card:hover{
+    transform:translateY(-5px);
+}
+
+.edu-logo,
+.exp-logo{
+    min-width:120px;
+    width:120px;
+    height:120px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.edu-logo img,
+.exp-logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.edu-content,
+.exp-content{
+    flex:1;
+}
+
+.edu-content h2,
+.exp-content h2{
+    color:white;
+    font-size:2.4rem;
+    margin-bottom:8px;
+}
+
+.edu-content h3,
+.exp-content h3{
+    color:crimson;
+    font-size:1.7rem;
+    margin-bottom:10px;
+}
+
+.edu-content p{
+    color:#a8b2d1;
+    line-height:2.5rem;
+}
+
+.exp-content ul{
+    margin-top:15px;
+    padding-left:20px;
+}
+
+.exp-content li{
+    color:#a8b2d1;
+    font-size:1.5rem;
+    margin-bottom:10px;
+    line-height:2.3rem;
+}
+
+@media(max-width:768px){
+
+    .edu-card,
+    .exp-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .exp-content ul{
+        text-align:left;
+    }
+}
 
 /* ==========================================
 PROJECTS SECTION
